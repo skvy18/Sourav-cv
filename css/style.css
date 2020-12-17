@@ -1,0 +1,743 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    overflow-x: hidden; /* no scroll on x-axis, for bigger images for example */
+    box-sizing: border-box;
+}
+
+/* mobile styles */
+
+#profile-img {
+    width: 100%;
+    height: auto;
+
+}
+
+#profile-img-div {
+    grid-column: 2/8;
+    text-align: center;
+    justify-content: center;
+    grid-row: 2;
+    margin-top: 25px;
+}
+
+#contact-img-div {
+    grid-row: 4;
+    grid-column: 2/8;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-top: 25px;
+
+}
+
+
+section {
+    /* Work with padding to ensure to link so the start of a section on button click */
+    padding-top: 20%;
+    padding-bottom: 5%;
+
+}
+
+
+.section-text {
+    grid-row: 2;
+    grid-column: 2/8;
+    text-align: left;
+}
+
+
+#section-text-about {
+    grid-row: 3;
+
+}
+
+/* fonts */
+/* register own font */
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fonts/Roboto-Black.ttf');
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('../assets/fonts/Manrope/static/Manrope-ExtraBold.ttf');
+}
+
+
+
+h3 {
+
+    font-family: "Manrope";
+    font-style: normal;
+    font-size: 22px;
+    line-height: 1.5;
+    color: #8E74FF;
+    grid-row: 1;
+}
+
+h1 {
+    font-family: "Manrope";
+    font-style: normal;
+    font-size: 26px;
+    line-height: 1.6;
+    color: #8E74FF;
+}
+
+h2 {
+    font-family: "Manrope";
+    font-style: normal;
+    font-size: 40px;
+    line-height: 1.6;
+    color: #8E74FF;
+}
+
+#home-p {
+    margin-top: 10px;
+}
+
+p, ul {
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+    color: #6D6D6D;
+}
+
+ul {
+    width: auto;
+    list-style: none;
+    color: #5D5D5D;
+    margin: 0;
+    /* removes white space of list items to the left side */
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    margin: 10px 10px 10px 0px;
+}
+
+
+li::before {content: "•"; color: #6D55D6; display: inline-block; width: 1em;
+}
+
+
+.section-headline-div {
+    grid-row: 1;
+    grid-column: 2/8;
+}
+
+.section-headline-underline {
+    height: 6px;
+    background: #9AEDD9;
+    margin-top: -10px;
+    z-index: -1;
+}
+
+#section-headline-underline-about {
+    width: 100px;
+ }
+
+#section-headline-underline-skills {
+    width: 90px;
+}
+
+#section-headline-underline-projects {
+    width: 120px;
+}
+
+#section-headline-underline-contact {
+    width: 120px;
+}
+
+.text-link {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+    color: #8E74FF;
+    transition: color 0.4s ease;
+    position: relative;
+}
+
+.text-link::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    /* The scaleX() CSS function defines a transformation that resizes an element along the x-axis (horizontally). */
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #9AEDD9;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.text-link:hover:before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* buttons */
+
+.button-group {
+    grid-row: 2;
+    margin-top: 25px;
+    display: grid;
+    grid-gap: 0.5em;
+}
+
+#button-div {
+    grid-row: 3;
+    grid-column: 2/8;
+    margin-top: 25px;
+    display: grid;
+    grid-gap: 0.5em;
+
+}
+
+/* TODO Create class button */
+
+.button {
+    font-family: "Manrope";
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+    padding: 10px 20px 10px 20px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.primary-button {
+    background: #4CBFA4;
+    border: 1px solid transparent;
+    color: #FFFFFF;
+}
+
+.primary-button:hover {
+    background: #FFFFFF;
+    color: #4CBFA4;
+    border: 1px solid #4CBFA4;
+}
+
+
+.secondary-button {
+    background: #FFFFFF;
+    border: 1px solid #4CBFA4;
+    color: #4CBFA4;
+}
+
+.secondary-button:hover {
+    background: #4CBFA4;
+    color: #FFFFFF;
+    border: 1px solid transparent;
+}
+
+/* icons */
+
+
+
+.social-icons {
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;}
+
+.icon {
+    height: 32px;
+    width: 32px;
+    margin: 0 20px;
+}
+
+/* structure elements */
+
+footer {
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: #fff;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+
+header {
+    margin-top: 70px;
+    height: 100%;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+}
+
+#home {
+    min-height: 75vh;
+}
+
+#home-img-div {
+    grid-row: 3;
+    grid-column: 2/8;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#home-img {
+    width: 98%; /* prevent image scrolling by not setting size to 100% */
+    height: 98%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#home-text {
+    grid-row: 1;
+    grid-column: 2/8;
+    text-align:left;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+    overflow-x: hidden;
+}
+
+.logo {
+    grid-column: 2/6;
+}
+
+nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: #fff;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap; /* flex items will wrap onto multiple lines, from top to bottom.*/
+    text-align: center;
+    justify-content: center;
+    padding: 12%;
+}
+
+.column {
+    flex: 50%;
+    max-width: 50%;
+    padding: 5px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+
+.project {
+    height: 200px;
+    background-color: grey;
+    margin-bottom: 25px;
+}
+
+#about {
+    padding-top: 20%;
+}
+
+#contact-img {
+   margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+}
+
+
+#skills-lists {
+    grid-row: 3;
+}
+.skill-headline {
+    color: #8E74FF;
+}
+
+
+
+/* small tablet styles */
+@media screen and (min-width: 620px) {
+
+
+    h3 {
+        font-size: 30px;
+        line-height: 40px;
+
+    }
+
+    h1 {
+        font-size: 40px;
+        line-height: 50px;
+
+    }
+
+    p, ul {
+        font-size: 18px;
+    }
+
+    .button {
+        font-size: 18px;
+    }
+
+    #about {
+        padding-top: 12%;
+        padding-bottom: 5%;
+
+    }
+
+
+
+    #instagram-sunset-img {
+        height: 200px;^
+         width: 200px;
+        border-radius: 5%;
+        grid-column: 2/4;
+        margin: 25px auto;
+    }
+
+    #instagram-desk-img {
+        height: 200px;
+        width: 200px;
+        grid-column: 5/8;
+        border-radius: 5%;
+        margin: 25px auto;
+
+
+    }
+
+    #instagram-flowers-laptop {
+        height: 150px;
+        width: 130px;
+        grid-column: 2/4;
+        border-radius: 5%;
+        grid-row: 2;
+        margin: 25px auto;
+
+
+    }
+
+    #instagram-setup {
+        height: 150px;
+        width: 130px;
+        grid-column: 4/6;
+        margin: 25px auto;
+
+    }
+
+    #instagram-smartphone-img {
+        height: 150px;
+        width: 130px;
+        grid-column: 6/8;
+        margin: 25px auto;
+    }
+
+    #section-text-about {
+        grid-row: 2;
+        grid-column: 2/5;
+
+    }
+
+    #profile-img {
+        width: 302px;
+        height: 403px;
+
+    }
+
+    #profile-img-div {
+        grid-column: 5/8;
+        margin: 0;
+    }
+
+    #section-text-contact {
+        grid-column: 2/5;
+    }
+
+    #contact-img-div {
+        grid-row: 2;
+        grid-column: 5/8;
+        margin: 0;
+    }
+
+    #contact-img {
+        width: 190px;
+        height: 189px;
+    }
+
+    #button-div {
+        grid-column: 2/5;
+        margin: 0;
+    }
+
+    .button-group {
+        grid-template-columns: repeat(2, 1fr);
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .primary-button {
+        grid-row: 1;
+    }
+
+    .secondary-button {
+        grid-row: 1;
+    }
+
+
+    #contact-btn {
+        grid-row: 3;
+
+    }
+
+    .section-headline-underline {
+        margin-top: -12px;
+    }
+
+    #section-headline-underline-about {
+        width: 135px;
+    }
+
+    #section-headline-underline-skills {
+        width: 122px;
+    }
+
+    #section-headline-underline-projects {
+        width: 160px;
+    }
+
+    #section-headline-underline-contact {
+        width: 160px;
+    }
+
+    section {
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+
+    #contact {
+        padding-bottom: 10%;
+    }
+
+    header {
+        margin-top: 150px;
+        padding-bottom: 20px;
+        margin-bottom: 60px;
+
+    }
+
+    /* large tablets & laptop styles */
+    @media screen and (min-width: 960px)  {
+
+        .section-headline-div {
+            height: 40px;
+        }
+
+
+        h3 {
+            font-size: 30px;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        p, ul, .text-link{
+            font-size: 22px;
+        }
+        #profile-img-div {
+            grid-column: 5/8;
+            text-align: center;
+            justify-content: center;
+            grid-row: 2;
+            margin: 0;
+        }
+
+        #profile-img {
+            height: 503px;
+            width: 377px;
+        }
+
+        .icon {
+            margin: 0 32px;
+        }
+
+        section {
+            padding-bottom: 5%;
+        }
+
+        #contact {
+            padding-bottom: 10%;
+
+        }
+
+
+    }
+
+
+    /* desktop styles */
+    @media screen and (min-width: 1200px) {
+
+        header {
+            margin-top: 300px;
+            padding: 0;
+            margin-bottom: 20px;
+
+        }
+
+        #home {
+            min-height: 60vh;
+        }
+
+        #about {
+            padding-top: 5%;
+        }
+
+        h3 {
+            font-size: 40px;
+            line-height: 60px;
+
+        }
+
+        h1 {
+            font-size: 50px;
+            line-height: 60px;
+
+        }
+
+        .section-headline-underline {
+            margin-top: -20px;
+        }
+
+        #section-headline-underline-about{
+            width: 180px;
+        }
+
+        #section-headline-underline-projects,  #section-headline-underline-contact {
+            width: 215px;
+        }
+
+        #section-headline-underline-skills {
+            width: 160px;
+        }
+
+
+
+        .row {
+            padding: 10% 12%;
+        }
+
+        /*img {
+            margin-bottom: 20px;
+        }*/
+
+        #home-text {
+            grid-column: 2/5;
+        }
+
+        #home-img-div {
+            grid-row: 1;
+           /* height: 100%;
+            width: 100%;*/
+            grid-column: 5/8;
+            margin-top: -1px;
+        }
+
+        #home-img {
+            width: 90%;
+            max-width: 700px;
+            height: auto;
+        }
+
+        #setup-img {
+            height: 500px;
+            width: 500px;
+        }
+
+        #desk-img {
+            height: 488px;
+            width: 600px;
+            margin-top: 100px;
+        }
+
+        #flowers-img {
+            height: 624px;
+            width: 500px;
+        }
+
+        #smartphone-img {
+            height: 709px;
+            width: 600px;
+        }
+
+        .section-text {
+            grid-column: 2/5;
+        }
+
+        #button-div {
+            grid-column: 2/3;
+        }
+
+        .section-headline-div {
+            height: 60px;
+        }
+
+        #contact-img-div {
+            grid-row: 2;
+            margin-top: -50px;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+        }
+
+        #contact-img {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+        }
+
+        #button-div {
+            width: 200px;
+        }
+
+        footer {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .icon {
+            height: 32px;
+            width: 32px;
+            margin: 0 50px;
+        }
+
+        #skills-lists {
+            grid-column: 2/6;
+        }
+
+
+
+    }
+
+
+}
